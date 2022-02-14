@@ -312,7 +312,7 @@ module Mongoid
         end
 
         def next_version
-          (send(history_trackable_options[:version_field]) || 0) + 1
+          (send(history_trackable_options[:version_field]).to_i || 0) + 1
         end
 
         def increment_current_version
